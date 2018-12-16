@@ -1,24 +1,28 @@
 require 'yaml'
-require_relative 'hello_controller'
 require_relative 'renderer'
+require_relative 'routes_builder'
+
+Dir.glob('controllers/*.rb') { |filename| require_relative(filename)} 
 
 class Application
 
   def initialize
-    @routes = YAML.load_file("routes.yml")
+    builder = RoutesBuilder.new(YAML.load_file("routes.yml"))
+    builder.build
+    @routes = builder.routes
   end
 
   def call(env)
-    if route_exists?(env["REQUEST_PATH"])
-      HelloController.new.index
-    else
+    exec @routes[env['REQUEST_PATH']]
+  rescue
       fail "No matching routes"
-    end
   end
 
   private
 
-  def route_exists?(path)
-    @routes[path]
+  def exec(route)
+    controller = Object.const_get(route['controller']).new
+    controller.send(route['method'])
   end
+
 end
