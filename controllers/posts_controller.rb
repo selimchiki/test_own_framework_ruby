@@ -8,4 +8,11 @@ class PostsController < BaseController
         @post = Post[params["id"]]
         render "posts/show.html.erb"
     end
+
+    def delete
+        post = Post[params["id"]]
+        post.delete
+
+        redirect_to "/posts"
+    end
 end
