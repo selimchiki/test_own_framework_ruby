@@ -5,6 +5,9 @@ require_relative 'base_controller'
 
 Dir.glob('controllers/*.rb') { |filename| require_relative("../#{filename}")} 
 
+DB = Sequel.connect('sqlite://db/database.sqlite')
+Dir.glob('models/*.rb') { |filename| require_relative("../#{filename}") }
+
 class Application
 
   def initialize
