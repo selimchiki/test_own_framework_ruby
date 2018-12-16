@@ -1,15 +1,23 @@
 require 'yaml'
+require_relative 'hello_controller'
 
 class Application
+
   def initialize
     @routes = YAML.load_file("routes.yml")
   end
 
   def call(env)
-    if @routes[env["REQUEST_PATH"]]
-      [200, {}, ["Ce chemin existe"]]
+    if route_exists?(env["REQUEST_PATH"])
+      HelloController.new.index
     else
-      [200, {}, ["Ce chemin n'existe pas"]]
+      fail "Pas de route correspondante"
     end
+  end
+
+  private
+
+  def route_exists?(path)
+    @routes[path]
   end
 end
