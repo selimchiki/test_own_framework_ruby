@@ -15,7 +15,16 @@ class Renderer
   private
 
   def result
-    ERB.new(template).result(@binding)
+    content = ERB.new(template).result(@binding)
+    insert_in_main_template { content }
+  end
+
+  def insert_in_main_template
+    ERB.new(main_template).result(binding)
+  end
+
+  def main_template
+    File.read('views/layouts/application.html.erb')
   end
 
   def template
