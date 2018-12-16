@@ -1,4 +1,4 @@
-class GreetingsController
+class GreetingsController < BaseController
   def hello
     render "hello.html"
   end
