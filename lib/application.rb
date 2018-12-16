@@ -1,4 +1,5 @@
 require 'yaml'
+require 'erb'
 require_relative 'renderer'
 require_relative 'routes_builder'
 require_relative 'base_controller'
