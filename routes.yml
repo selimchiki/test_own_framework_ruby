@@ -1,1 +1,2 @@
 "/posts": { via: "get", to: "posts#index" }
+"/posts/show": { via: "get", to: "posts#show" }

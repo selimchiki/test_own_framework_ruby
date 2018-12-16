@@ -18,15 +18,16 @@ class Application
   end
 
   def call(env)
-    exec @routes[env['REQUEST_PATH']]
+    exec(@routes[env['PATH_INFO']], env)
   rescue
     fail "No matching routes"
   end
 
   private
 
-  def exec(route)
-    controller = Object.const_get(route['controller']).new
+  def exec(route, env)
+    req = Rack::Request.new(env)
+    controller = Object.const_get(route['controller']).new(req.params)
     controller.send(route['method'])
   end
 
