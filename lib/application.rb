@@ -3,7 +3,7 @@ require_relative 'renderer'
 require_relative 'routes_builder'
 require_relative 'base_controller'
 
-Dir.glob('controllers/*.rb') { |filename| require_relative(filename)} 
+Dir.glob('controllers/*.rb') { |filename| require_relative("../#{filename}")} 
 
 class Application
 
@@ -16,7 +16,7 @@ class Application
   def call(env)
     exec @routes[env['REQUEST_PATH']]
   rescue
-      fail "No matching routes"
+    fail "No matching routes"
   end
 
   private
