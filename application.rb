@@ -1,5 +1,6 @@
 require 'yaml'
 require_relative 'hello_controller'
+require_relative 'renderer'
 
 class Application
 
@@ -11,7 +12,7 @@ class Application
     if route_exists?(env["REQUEST_PATH"])
       HelloController.new.index
     else
-      fail "Pas de route correspondante"
+      fail "No matching routes"
     end
   end
 

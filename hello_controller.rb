@@ -1,5 +1,6 @@
 class HelloController
   def index
-    [200, {}, ["Coucou !"]]
+    status, body = Renderer.new("hello.html").render
+    [status, {}, [body]]
   end
 end
