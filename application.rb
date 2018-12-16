@@ -1,6 +1,7 @@
 require 'yaml'
 require_relative 'renderer'
 require_relative 'routes_builder'
+require_relative 'base_controller'
 
 Dir.glob('controllers/*.rb') { |filename| require_relative(filename)} 
 

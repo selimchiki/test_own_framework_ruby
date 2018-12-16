@@ -1,6 +1,5 @@
 class RootController
   def index
-    status, body = Renderer.new("root.html").render
-    [status, {}, [body]]
+    render "root.html"
   end
 end
