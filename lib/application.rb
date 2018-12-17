@@ -18,7 +18,7 @@ class Application
   include Error
 
   def initialize
-    @routes = Routes.new(YAML.load_file("routes.yml"))
+    @routes = Routes.new("./routes.rb")
   end
 
   def call(env)

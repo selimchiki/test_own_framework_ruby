@@ -29,4 +29,6 @@ class BaseController
     def content_for(name, value)
         @binding.local_variable_set(name, value)
     end
+
+
 end
