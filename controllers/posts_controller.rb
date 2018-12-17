@@ -28,5 +28,18 @@ class PostsController < BaseController
         redirect_to "/posts"
     end
 
+    def edit
+        @post = Post[params["id"]]
+        render "/posts/edit.html.erb"
+    end
+
+    def update
+        post = Post[params["id"]]
+        post.update(title: params["title"],
+                    content: params["content"],
+                    date: Time.now.to_i)
+        redirect_to "/posts"
+    end
+
 
 end
