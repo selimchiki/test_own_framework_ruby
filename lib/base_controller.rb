@@ -3,6 +3,7 @@ require_relative 'error'
 class BaseController
 
     include Error
+    include ERB::Util
 
     def initialize(params)
         @params = params

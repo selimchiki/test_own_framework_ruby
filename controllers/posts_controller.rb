@@ -28,7 +28,8 @@ class PostsController < BaseController
     def create
         Post.create(title: params["title"],
                     content: params["content"],
-                    date: Time.now.to_i)
+                    gif: params["gif"],
+                    date: Time.now)
         redirect_to "/posts"
     end
 
@@ -41,7 +42,8 @@ class PostsController < BaseController
         post = Post[params["id"]]
         post.update(title: params["title"],
                     content: params["content"],
-                    date: Time.now.to_i)
+                    gif: params["gif"],
+                    date: Time.now)
         redirect_to "/posts"
     end
 
