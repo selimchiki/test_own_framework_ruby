@@ -3,13 +3,13 @@
    <head>
      <meta charset="utf-8">
      <title>Blog</title>
-     <link rel="stylesheet" type="text/css" href="/css/main.css">
+     <%= include_css %>
    </head>
  
     <body>
         <h1>Blog</h1>
         <%= yield %>
 
-        <script src="/js/main.js"></script>
+        <%= include_js %>
     </body>
 </html>

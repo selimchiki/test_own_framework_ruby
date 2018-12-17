@@ -34,4 +34,12 @@ class Renderer
   def no_template
     "<h1>500</h1><p>No such template: #{@filename}</p>"
   end
+
+  def include_css
+    IncludeCSS.call
+  end
+
+  def include_js
+    IncludeJS.call
+  end
 end
