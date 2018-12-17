@@ -23,7 +23,7 @@ class Application
     route = @routes.find(env["REQUEST_METHOD"], env["PATH_INFO"])
     route.exec_with(req.params)
   rescue
-    fail "No matching routes"
+    [500, {"Content-Type" => "text/html"}, [File.read("public/500.html")]]
   end
 
 end
