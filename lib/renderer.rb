@@ -20,6 +20,10 @@ class Renderer
     end
   end
 
+  def include_partial(filename)
+    Renderer.new(File.join('views', filename), binding).render_partial
+  end
+
   private
 
   def result
