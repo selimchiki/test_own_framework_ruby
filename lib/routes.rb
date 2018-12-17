@@ -1,4 +1,4 @@
-class RoutesBuilder
+class Routes
 
   def initialize(routes_from_file)
     @routes = {}
