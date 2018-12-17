@@ -1,8 +1,11 @@
 class Routes
 
-  def initialize(filename)
+  def initialize
     @routes = {}
-    eval File.read(filename)
+  end
+
+  def config(&block)
+    instance_eval &block
   end
 
   def get(path, route_to:)

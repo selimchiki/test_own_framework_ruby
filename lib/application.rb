@@ -17,13 +17,18 @@ class Application
 
   include Error
 
+  def self.routes
+    @@routes
+  end
+
   def initialize
-    @routes = Routes.new("./routes.rb")
+    @@routes = Routes.new
+    require "./routes"
   end
 
   def call(env)
     req = Rack::Request.new(env)
-    route = @routes.find(env["REQUEST_METHOD"], env["PATH_INFO"])
+    route = @@routes.find(env["REQUEST_METHOD"], env["PATH_INFO"])
     route.exec_with(req.params)
   rescue E404 => ex
     error_404
