@@ -12,6 +12,14 @@ class Renderer
     end
   end
 
+  def render_partial
+    if File.exist?(@filename)
+      ERB.new(template).result(@binding)
+    else
+      no_template
+    end
+  end
+
   private
 
   def result
@@ -32,7 +40,8 @@ class Renderer
   end
 
   def no_template
-    "<h1>500</h1><p>No such template: #{@filename}</p>"
+    puts "Erreur 500 Template inconnu: #{@filename}"
+    fail
   end
 
   def include_css

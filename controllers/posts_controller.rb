@@ -21,6 +21,7 @@ class PostsController < BaseController
     end
 
     def new
+        @post = Post.new
         render "posts/new.html.erb"
     end
 

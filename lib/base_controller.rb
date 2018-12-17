@@ -20,4 +20,8 @@ class BaseController
     def redirect_to(path)
         [303, {'Location' => path}, ['303 See Other']]
     end
+
+    def partial(filename)
+        Renderer.new(File.join('views', filename), binding).render_partial
+    end
 end

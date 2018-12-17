@@ -27,8 +27,8 @@ class Application
     route.exec_with(req.params)
   rescue E404 => ex
     error_404
-  rescue
-    error_500
+  #rescue
+  #  error_500
   end
 
 end
