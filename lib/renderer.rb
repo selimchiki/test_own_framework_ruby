@@ -24,6 +24,12 @@ class Renderer
     Renderer.new(File.join('views', filename), binding).render_partial
   end
 
+  def include_content(name)
+    @binding.local_variable_get(name)
+  rescue
+    nil
+  end
+
   private
 
   def result
