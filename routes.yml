@@ -1,3 +1,5 @@
-"/posts": { via: "get", to: "posts#index" }
-"/posts/show": { via: "get", to: "posts#show" }
-"/posts/delete": { via: "get", to: "posts#delete" }
+["get", "/posts"]: "posts#index"
+["get", "/posts/show"]: "posts#show"
+["get", "/posts/delete"]: "posts#delete"
+["get", "/posts/new"]: "posts#new"
+["post", "/posts/new"]: "posts#create"
