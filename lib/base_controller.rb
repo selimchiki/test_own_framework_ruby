@@ -1,4 +1,8 @@
+require_relative 'error'
+
 class BaseController
+
+    include Error
 
     def initialize(params)
         @params = params
