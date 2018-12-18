@@ -1,0 +1,5 @@
+# Logfile created on 2018-12-18 20:09:56 +0100 by logger.rb/61378
+I, [2018-12-18T20:09:56.118368 #59842]  INFO -- : (0.000386s) PRAGMA foreign_keys = 1
+I, [2018-12-18T20:09:56.118466 #59842]  INFO -- : (0.000022s) PRAGMA case_sensitive_like = 1
+I, [2018-12-18T20:09:56.167516 #59842]  INFO -- : (0.000116s) SELECT sqlite_version()
+I, [2018-12-18T20:09:56.167845 #59842]  INFO -- : (0.000176s) PRAGMA table_info('quotes')

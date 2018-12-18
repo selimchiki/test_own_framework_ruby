@@ -1,8 +1,5 @@
-require 'bundler/setup'
-Bundler.require(:default)
 require_relative "lib/application"
 Dir.glob('lib/middlewares/*.rb') {|filename| require_relative "#{filename}"}
-require 'logger'
 
 if ENV["RACK_ENV"] == "development"
   use Rack::Reloader

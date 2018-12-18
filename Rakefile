@@ -10,3 +10,13 @@ namespace :db do
     puts "Done."
   end
 end
+
+namespace :css do
+  desc "Build full.css"
+  task :compile do |t|
+    require_relative 'lib/application'
+    puts "Building `full.css`..."
+    IncludeCSS.new.full_build
+    puts "Done."
+  end
+end

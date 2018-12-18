@@ -2,6 +2,7 @@ require 'yaml'
 require 'erb'
 require 'logger'
 require 'singleton'
+require 'bundler/setup'
 require_relative 'renderer'
 require_relative 'routes'
 require_relative 'base_controller'
@@ -13,10 +14,13 @@ require_relative 'framework_logger'
 require_relative 'api_renderer'
 require_relative 'database'
 
+Bundler.require(:default)
+DB = Database.setup
+
 Dir.glob('controllers/*.rb') { |filename| require_relative("../#{filename}")}
 Dir.glob('models/*.rb') { |filename| require_relative("../#{filename}") }
 
-DB = Database.setup
+
 
 class Application
 
