@@ -7,6 +7,7 @@ class BaseController
 
     def initialize(params)
         @params = params
+        @headers = {}
     end
 
     private
@@ -16,7 +17,7 @@ class BaseController
     def render(filename)
         @binding = binding
         status, body = Renderer.new(File.join('views', filename), @binding).render
-        [status, {}, [body]]
+        [status, @headers, [body]]
     end
 
     def redirect_to(path)
@@ -31,5 +32,9 @@ class BaseController
         @binding.local_variable_set(name, value)
     end
 
+
+    def headers(hash)
+        @headers.merge!(hash)
+    end
 
 end

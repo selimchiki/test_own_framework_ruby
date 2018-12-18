@@ -2,6 +2,7 @@ class PostsController < BaseController
 
     def index
         @posts = Post.all
+        headers "Cache-Control" => 'private, max-age=30'
         render "posts/index.html.erb"
     end
 
