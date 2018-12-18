@@ -14,6 +14,7 @@ require_relative 'framework_logger'
 Dir.glob('controllers/*.rb') { |filename| require_relative("../#{filename}")} 
 
 DB = Sequel.connect(File.read("db/configuration").chomp, logger: Logger.new("logs/db.log"))
+Sequel::Model.plugin :json_serializer
 Dir.glob('models/*.rb') { |filename| require_relative("../#{filename}") }
 
 class Application

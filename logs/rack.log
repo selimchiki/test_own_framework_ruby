@@ -1,2 +1,4 @@
 # Logfile created on 2018-12-18 18:18:07 +0100 by logger.rb/61378
 ::1 - - [18/Dec/2018:18:18:08 +0100] "GET /quotes HTTP/1.1" 200 - 0.0018
+::1 - - [18/Dec/2018:18:33:23 +0100] "GET /quotes/show?character=brett HTTP/1.1" 200 - 0.0234
+::1 - - [18/Dec/2018:18:35:36 +0100] "GET /quotes/show?character=brett HTTP/1.1" 200 - 0.0010
