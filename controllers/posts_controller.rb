@@ -1,7 +1,7 @@
 class PostsController < BaseController
 
     def index
-        FrameworkLogger.info "Accueil de tout les posts vu"
+        info "Accueil de tout les posts vu"
         @posts = Post.all
         headers "Cache-Control" => 'private, max-age=30'
         render "posts/index.html.erb"

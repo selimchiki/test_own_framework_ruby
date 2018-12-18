@@ -1,9 +1,11 @@
 require_relative 'error'
+require_relative 'logging'
 
 class BaseController
 
     include Error
     include ERB::Util
+    include Logging
 
     def initialize(params)
         @params = params
