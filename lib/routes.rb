@@ -17,7 +17,7 @@ class Routes
   end
 
   def find(verb, path)
-    key = [verb.downcase, path.downcase.sub(%r{/$}, '')]
+    key = [verb.downcase, path.downcase]
     @routes[key] or raise E404
   end
 end
