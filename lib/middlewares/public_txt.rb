@@ -1,6 +1,7 @@
 class PublicTxt
-  def initialize(app)
+  def initialize(app, folder = "public")
     @app = app
+    @folder = folder
   end
 
   def call(env)
@@ -20,7 +21,7 @@ class PublicTxt
   end
 
   def real_file
-    "public" + @file
+    @folder + @file
   end
 
   def content
