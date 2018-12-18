@@ -1,7 +1,7 @@
 class PostsController < BaseController
 
     def index
-        FrameworkLogger.instance.logger.info "Accueil de tout les posts vu"
+        FrameworkLogger.info "Accueil de tout les posts vu"
         @posts = Post.all
         headers "Cache-Control" => 'private, max-age=30'
         render "posts/index.html.erb"
@@ -9,7 +9,7 @@ class PostsController < BaseController
 
     def show
         if (@post = Post[params["id"]])
-            FrameworkLogger.instance.logger.info "Post n° #{params["id"]} vu"
+            FrameworkLogger.info "Post n° #{params["id"]} vu"
             render "posts/show.html.erb"
         else
             error_404
