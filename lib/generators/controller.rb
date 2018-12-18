@@ -1,30 +1,35 @@
 module Generators
   class Controller
-    def self.generate(name:)
-      puts new(name).generate
+    def self.generate(args)
+      new(args).generate
     end
 
-    def initialize(name)
+    def initialize(args)
+      name = args.shift
+      @actions = args
       @filename = "#{name}_controller.rb"
-      @classname = name.split('_').map(&:capitalize).join
-      @name = name.capitalize
+      @classname = name.split('_').each(&:capitalize!).join
     end
 
     def generate
-      File.write("#{path}/#{filename}", code)
+      File.write(file_location, code)
     end
 
     private
 
-    attr_reader :filename
+    attr_reader :filename, :actions, :classname
 
-    def path
-      "controllers"
+    def file_location
+      "controllers/#{filename}"
     end
 
     def code
-      <<~CODE
-        Class #{@classname}Controller < BaseController
+      actions.empty? ? standard : custom
+    end
+
+    def standard
+      <<~STANDART
+        Class #{classname}Controller < BaseController
           def index
           end
 
@@ -46,7 +51,13 @@ module Generators
           def update
           end
         end
-      CODE
+      STANDART
+    end
+
+    def custom
+      "class #{classname}Controller < Basecontroller\n" + actions.map do |action|
+        "def #{action}\nend\n"
+      end.join("\n") + "end\n"
     end
   end
 end
