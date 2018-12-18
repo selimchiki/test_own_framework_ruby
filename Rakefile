@@ -20,3 +20,13 @@ namespace :css do
     puts "Done."
   end
 end
+
+namespace :create do
+  desc "Create a controller"
+  task :controller, [:name] do |t, args|
+    require_relative 'lib/generators/controller'
+    puts "Creating controller..."
+    Generators::Controller.generate(name: args[:name])
+    puts "Done."
+  end
+end
