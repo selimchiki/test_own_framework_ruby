@@ -27,13 +27,27 @@ class Application
   end
 
   def call(env)
+    if env["framework.api"]
+      execute_api_request(env)
+    else
+      execute_browser_request(env)
+    end
+  end
+
+  private
+
+  def execute_api_request(env)
+    [200, {}, ["API Response For #{env["PATH_INFO"]}"]]
+  end
+
+  def execute_browser_request(env)
     req = Rack::Request.new(env)
     route = @@routes.find(env["REQUEST_METHOD"], env["PATH_INFO"])
     route.exec_with(req.params)
   rescue E404 => ex
     error_404
-  #rescue
-  #  error_500
+    #rescue
+    #  error_500
   end
 
 end
