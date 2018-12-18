@@ -1,6 +1,7 @@
 require 'yaml'
 require 'erb'
 require 'logger'
+require 'singleton'
 require_relative 'renderer'
 require_relative 'routes'
 require_relative 'base_controller'
@@ -8,6 +9,7 @@ require_relative 'route'
 require_relative 'include_css'
 require_relative 'include_js'
 require_relative 'error'
+require_relative 'framework_logger'
 
 Dir.glob('controllers/*.rb') { |filename| require_relative("../#{filename}")} 
 
@@ -22,9 +24,10 @@ class Application
     @@routes
   end
 
-  def initialize
+  def initialize(logger:)
     @@routes = Routes.new
     require "./routes"
+    FrameworkLogger.instance.logger = logger
   end
 
   def call(env)

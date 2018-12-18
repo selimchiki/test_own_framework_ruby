@@ -16,4 +16,4 @@ use BrowserCache
 use Rack::Static, :urls => ["/css", "/js", "/images"], :root => "assets"
 
 
-run Application.new
+run Application.new(logger: Logger.new("logs/app.log"))
