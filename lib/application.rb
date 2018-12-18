@@ -48,8 +48,8 @@ class Application
     route.exec_with(req.params)
   rescue E404 => ex
     api_error_404
-  rescue
-    api_error_500
+  rescue => ex
+    api_error_500(ex.message)
   end
 
   def execute_browser_request(env)

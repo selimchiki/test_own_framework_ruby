@@ -17,3 +17,5 @@
 ::1 - - [18/Dec/2018:19:25:59 +0100] "GET /v1/quotes/show?character=brett HTTP/1.1" 200 - 0.0009
 ::1 - - [18/Dec/2018:19:29:43 +0100] "GET /v1/quotes/show?character=brett HTTP/1.1" 200 - 0.0012
 ::1 - - [18/Dec/2018:19:29:45 +0100] "POST /v1/quotes/like?id=5 HTTP/1.1" 299 - 0.0448
+::1 - - [18/Dec/2018:19:34:25 +0100] "POST /v1/quota HTTP/1.1" 404 - 0.0003
+::1 - - [18/Dec/2018:19:39:57 +0100] "GET /v1/quotes/show?character=brett HTTP/1.1" 500 - 0.0004

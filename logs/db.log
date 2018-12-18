@@ -79,3 +79,19 @@ I, [2018-12-18T19:29:45.715186 #57540]  INFO -- : (0.000189s) SELECT * FROM `quo
 I, [2018-12-18T19:29:45.715391 #57540]  INFO -- : (0.000027s) BEGIN
 I, [2018-12-18T19:29:45.715996 #57540]  INFO -- : (0.000325s) UPDATE `quotes` SET `character` = 'Mia', `quote` = 'C''est comme ça qu''on voir si on se plaît avec une personne. Quand on peut se taire tout à fait au moins une minute et profiter du silence.', `likes` = 5, `dislikes` = 0 WHERE (`id` = 5)
 I, [2018-12-18T19:29:45.717865 #57540]  INFO -- : (0.001746s) COMMIT
+I, [2018-12-18T19:34:14.466986 #57827]  INFO -- : (0.000379s) PRAGMA foreign_keys = 1
+I, [2018-12-18T19:34:14.467106 #57827]  INFO -- : (0.000022s) PRAGMA case_sensitive_like = 1
+I, [2018-12-18T19:34:14.480074 #57827]  INFO -- : (0.000133s) SELECT sqlite_version()
+I, [2018-12-18T19:34:14.480514 #57827]  INFO -- : (0.000251s) PRAGMA table_info('quotes')
+I, [2018-12-18T19:36:05.638789 #57971]  INFO -- : (0.000363s) PRAGMA foreign_keys = 1
+I, [2018-12-18T19:36:05.638919 #57971]  INFO -- : (0.000022s) PRAGMA case_sensitive_like = 1
+I, [2018-12-18T19:36:05.648229 #57971]  INFO -- : (0.000145s) SELECT sqlite_version()
+I, [2018-12-18T19:36:05.648568 #57971]  INFO -- : (0.000179s) PRAGMA table_info('quotes')
+I, [2018-12-18T19:39:13.979919 #58183]  INFO -- : (0.000315s) PRAGMA foreign_keys = 1
+I, [2018-12-18T19:39:13.980047 #58183]  INFO -- : (0.000022s) PRAGMA case_sensitive_like = 1
+I, [2018-12-18T19:39:13.992903 #58183]  INFO -- : (0.000113s) SELECT sqlite_version()
+I, [2018-12-18T19:39:13.993248 #58183]  INFO -- : (0.000184s) PRAGMA table_info('quotes')
+I, [2018-12-18T19:39:54.468545 #58290]  INFO -- : (0.000404s) PRAGMA foreign_keys = 1
+I, [2018-12-18T19:39:54.468663 #58290]  INFO -- : (0.000023s) PRAGMA case_sensitive_like = 1
+I, [2018-12-18T19:39:54.481322 #58290]  INFO -- : (0.000118s) SELECT sqlite_version()
+I, [2018-12-18T19:39:54.481655 #58290]  INFO -- : (0.000171s) PRAGMA table_info('quotes')
