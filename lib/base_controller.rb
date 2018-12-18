@@ -22,6 +22,12 @@ class BaseController
         [status, @headers, [body]]
     end
 
+    def render_json(object, status: 200)
+        @binding = binding
+        body = APIRenderer.new(object, @binding).render
+        [status, @headers.merge!({"Content-Type" => 'application/json'}), [body]]
+    end
+
     def redirect_to(path)
         [303, {'Location' => path}, ['303 See Other']]
     end

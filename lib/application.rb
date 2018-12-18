@@ -10,6 +10,7 @@ require_relative 'include_css'
 require_relative 'include_js'
 require_relative 'error'
 require_relative 'framework_logger'
+require_relative 'api_renderer'
 
 Dir.glob('controllers/*.rb') { |filename| require_relative("../#{filename}")} 
 
@@ -42,7 +43,13 @@ class Application
   private
 
   def execute_api_request(env)
-    [200, {}, ["API Response For #{env["PATH_INFO"]}"]]
+    route = @@routes.find(env["REQUEST_METHOD"], env["PATH_INFO"])
+    req = Rack::Request.new(env)
+    route.exec_with(req.params)
+  rescue E404 => ex
+    api_error_404
+  rescue
+    api_error_500
   end
 
   def execute_browser_request(env)
@@ -51,8 +58,8 @@ class Application
     route.exec_with(req.params)
   rescue E404 => ex
     error_404
-    #rescue
-    #  error_500
+  rescue
+    error_500
   end
 
 end

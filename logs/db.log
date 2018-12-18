@@ -14,3 +14,68 @@ I, [2018-12-18T18:35:34.626040 #54767]  INFO -- : (0.000023s) PRAGMA case_sensit
 I, [2018-12-18T18:35:34.706255 #54767]  INFO -- : (0.000117s) SELECT sqlite_version()
 I, [2018-12-18T18:35:34.706608 #54767]  INFO -- : (0.000170s) PRAGMA table_info('quotes')
 I, [2018-12-18T18:35:36.855999 #54767]  INFO -- : (0.000278s) SELECT * FROM `quotes` WHERE (UPPER(`character`) LIKE UPPER('brett') ESCAPE '\') LIMIT 1
+I, [2018-12-18T18:49:48.194506 #55349]  INFO -- : (0.006757s) PRAGMA foreign_keys = 1
+I, [2018-12-18T18:49:48.205078 #55349]  INFO -- : (0.000055s) PRAGMA case_sensitive_like = 1
+I, [2018-12-18T18:49:48.257591 #55349]  INFO -- : (0.000141s) SELECT sqlite_version()
+I, [2018-12-18T18:49:48.257945 #55349]  INFO -- : (0.000174s) PRAGMA table_info('quotes')
+I, [2018-12-18T18:50:31.858486 #55349]  INFO -- : (0.016682s) SELECT * FROM `quotes` WHERE `id` = '5'
+I, [2018-12-18T18:50:31.858715 #55349]  INFO -- : (0.000028s) BEGIN
+I, [2018-12-18T18:50:31.859345 #55349]  INFO -- : (0.000348s) UPDATE `quotes` SET `character` = 'Mia', `quote` = 'C''est comme ça qu''on voir si on se plaît avec une personne. Quand on peut se taire tout à fait au moins une minute et profiter du silence.', `likes` = 1, `dislikes` = 0 WHERE (`id` = 5)
+I, [2018-12-18T18:50:31.861514 #55349]  INFO -- : (0.002099s) COMMIT
+I, [2018-12-18T19:00:23.734539 #55811]  INFO -- : (0.000327s) PRAGMA foreign_keys = 1
+I, [2018-12-18T19:00:23.734655 #55811]  INFO -- : (0.000022s) PRAGMA case_sensitive_like = 1
+I, [2018-12-18T19:00:23.781542 #55811]  INFO -- : (0.000115s) SELECT sqlite_version()
+I, [2018-12-18T19:00:23.781873 #55811]  INFO -- : (0.000166s) PRAGMA table_info('quotes')
+I, [2018-12-18T19:06:37.770427 #56130]  INFO -- : (0.000360s) PRAGMA foreign_keys = 1
+I, [2018-12-18T19:06:37.770542 #56130]  INFO -- : (0.000021s) PRAGMA case_sensitive_like = 1
+I, [2018-12-18T19:06:37.817207 #56130]  INFO -- : (0.000135s) SELECT sqlite_version()
+I, [2018-12-18T19:06:37.817588 #56130]  INFO -- : (0.000193s) PRAGMA table_info('quotes')
+I, [2018-12-18T19:14:55.591117 #56506]  INFO -- : (0.000317s) PRAGMA foreign_keys = 1
+I, [2018-12-18T19:14:55.591241 #56506]  INFO -- : (0.000021s) PRAGMA case_sensitive_like = 1
+I, [2018-12-18T19:14:55.638135 #56506]  INFO -- : (0.000109s) SELECT sqlite_version()
+I, [2018-12-18T19:14:55.638475 #56506]  INFO -- : (0.000173s) PRAGMA table_info('quotes')
+I, [2018-12-18T19:18:45.847111 #56724]  INFO -- : (0.000320s) PRAGMA foreign_keys = 1
+I, [2018-12-18T19:18:45.847252 #56724]  INFO -- : (0.000025s) PRAGMA case_sensitive_like = 1
+I, [2018-12-18T19:18:45.893383 #56724]  INFO -- : (0.000117s) SELECT sqlite_version()
+I, [2018-12-18T19:18:45.893725 #56724]  INFO -- : (0.000167s) PRAGMA table_info('quotes')
+I, [2018-12-18T19:18:49.043925 #56724]  INFO -- : (0.015372s) SELECT * FROM `quotes` WHERE (UPPER(`character`) LIKE UPPER('brett') ESCAPE '\') LIMIT 1
+I, [2018-12-18T19:21:09.627687 #56896]  INFO -- : (0.000900s) PRAGMA foreign_keys = 1
+I, [2018-12-18T19:21:09.627802 #56896]  INFO -- : (0.000022s) PRAGMA case_sensitive_like = 1
+I, [2018-12-18T19:21:09.673952 #56896]  INFO -- : (0.000115s) SELECT sqlite_version()
+I, [2018-12-18T19:21:09.674294 #56896]  INFO -- : (0.000166s) PRAGMA table_info('quotes')
+I, [2018-12-18T19:21:15.194662 #56896]  INFO -- : (0.000261s) SELECT * FROM `quotes` WHERE (UPPER(`character`) LIKE UPPER('brett') ESCAPE '\') LIMIT 1
+I, [2018-12-18T19:22:13.562322 #57018]  INFO -- : (0.000377s) PRAGMA foreign_keys = 1
+I, [2018-12-18T19:22:13.562443 #57018]  INFO -- : (0.000022s) PRAGMA case_sensitive_like = 1
+I, [2018-12-18T19:22:13.574896 #57018]  INFO -- : (0.000116s) SELECT sqlite_version()
+I, [2018-12-18T19:22:13.575225 #57018]  INFO -- : (0.000176s) PRAGMA table_info('quotes')
+I, [2018-12-18T19:22:16.577623 #57018]  INFO -- : (0.000243s) SELECT * FROM `quotes` WHERE (UPPER(`character`) LIKE UPPER('brett') ESCAPE '\') LIMIT 1
+I, [2018-12-18T19:22:30.127493 #57018]  INFO -- : (0.000208s) SELECT * FROM `quotes` WHERE `id` = '5'
+I, [2018-12-18T19:22:30.127737 #57018]  INFO -- : (0.000032s) BEGIN
+I, [2018-12-18T19:22:30.147067 #57018]  INFO -- : (0.019033s) UPDATE `quotes` SET `character` = 'Mia', `quote` = 'C''est comme ça qu''on voir si on se plaît avec une personne. Quand on peut se taire tout à fait au moins une minute et profiter du silence.', `likes` = 2, `dislikes` = 0 WHERE (`id` = 5)
+I, [2018-12-18T19:22:30.149071 #57018]  INFO -- : (0.001828s) COMMIT
+I, [2018-12-18T19:23:51.804438 #57172]  INFO -- : (0.000373s) PRAGMA foreign_keys = 1
+I, [2018-12-18T19:23:51.804557 #57172]  INFO -- : (0.000022s) PRAGMA case_sensitive_like = 1
+I, [2018-12-18T19:23:51.851421 #57172]  INFO -- : (0.000110s) SELECT sqlite_version()
+I, [2018-12-18T19:23:51.851775 #57172]  INFO -- : (0.000165s) PRAGMA table_info('quotes')
+I, [2018-12-18T19:23:53.201861 #57172]  INFO -- : (0.000227s) SELECT * FROM `quotes` WHERE `id` = '5'
+I, [2018-12-18T19:23:53.202094 #57172]  INFO -- : (0.000026s) BEGIN
+I, [2018-12-18T19:23:53.202691 #57172]  INFO -- : (0.000322s) UPDATE `quotes` SET `character` = 'Mia', `quote` = 'C''est comme ça qu''on voir si on se plaît avec une personne. Quand on peut se taire tout à fait au moins une minute et profiter du silence.', `likes` = 3, `dislikes` = 0 WHERE (`id` = 5)
+I, [2018-12-18T19:23:53.204220 #57172]  INFO -- : (0.001461s) COMMIT
+I, [2018-12-18T19:25:55.439654 #57323]  INFO -- : (0.000390s) PRAGMA foreign_keys = 1
+I, [2018-12-18T19:25:55.439779 #57323]  INFO -- : (0.000023s) PRAGMA case_sensitive_like = 1
+I, [2018-12-18T19:25:55.486662 #57323]  INFO -- : (0.000123s) SELECT sqlite_version()
+I, [2018-12-18T19:25:55.486997 #57323]  INFO -- : (0.000171s) PRAGMA table_info('quotes')
+I, [2018-12-18T19:25:57.166084 #57323]  INFO -- : (0.000211s) SELECT * FROM `quotes` WHERE `id` = '5'
+I, [2018-12-18T19:25:57.166279 #57323]  INFO -- : (0.000027s) BEGIN
+I, [2018-12-18T19:25:57.166866 #57323]  INFO -- : (0.000312s) UPDATE `quotes` SET `character` = 'Mia', `quote` = 'C''est comme ça qu''on voir si on se plaît avec une personne. Quand on peut se taire tout à fait au moins une minute et profiter du silence.', `likes` = 4, `dislikes` = 0 WHERE (`id` = 5)
+I, [2018-12-18T19:25:57.168195 #57323]  INFO -- : (0.001259s) COMMIT
+I, [2018-12-18T19:25:59.106614 #57323]  INFO -- : (0.000289s) SELECT * FROM `quotes` WHERE (UPPER(`character`) LIKE UPPER('brett') ESCAPE '\') LIMIT 1
+I, [2018-12-18T19:29:41.190037 #57540]  INFO -- : (0.000337s) PRAGMA foreign_keys = 1
+I, [2018-12-18T19:29:41.190161 #57540]  INFO -- : (0.000023s) PRAGMA case_sensitive_like = 1
+I, [2018-12-18T19:29:41.289036 #57540]  INFO -- : (0.000130s) SELECT sqlite_version()
+I, [2018-12-18T19:29:41.289433 #57540]  INFO -- : (0.000203s) PRAGMA table_info('quotes')
+I, [2018-12-18T19:29:43.770426 #57540]  INFO -- : (0.000370s) SELECT * FROM `quotes` WHERE (UPPER(`character`) LIKE UPPER('brett') ESCAPE '\') LIMIT 1
+I, [2018-12-18T19:29:45.715186 #57540]  INFO -- : (0.000189s) SELECT * FROM `quotes` WHERE `id` = '5'
+I, [2018-12-18T19:29:45.715391 #57540]  INFO -- : (0.000027s) BEGIN
+I, [2018-12-18T19:29:45.715996 #57540]  INFO -- : (0.000325s) UPDATE `quotes` SET `character` = 'Mia', `quote` = 'C''est comme ça qu''on voir si on se plaît avec une personne. Quand on peut se taire tout à fait au moins une minute et profiter du silence.', `likes` = 5, `dislikes` = 0 WHERE (`id` = 5)
+I, [2018-12-18T19:29:45.717865 #57540]  INFO -- : (0.001746s) COMMIT
