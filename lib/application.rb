@@ -1,5 +1,6 @@
 require 'yaml'
 require 'erb'
+require 'logger'
 require_relative 'renderer'
 require_relative 'routes'
 require_relative 'base_controller'
@@ -10,7 +11,7 @@ require_relative 'error'
 
 Dir.glob('controllers/*.rb') { |filename| require_relative("../#{filename}")} 
 
-DB = Sequel.connect(File.read("db/configuration").chomp)
+DB = Sequel.connect(File.read("db/configuration").chomp, logger: Logger.new("logs/db.log"))
 Dir.glob('models/*.rb') { |filename| require_relative("../#{filename}") }
 
 class Application

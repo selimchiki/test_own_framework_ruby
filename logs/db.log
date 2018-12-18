@@ -1,0 +1,11 @@
+# Logfile created on 2018-12-18 17:19:22 +0100 by logger.rb/61378
+I, [2018-12-18T17:19:22.799008 #49680]  INFO -- : (0.000429s) SET standard_conforming_strings = ON
+I, [2018-12-18T17:19:22.799283 #49680]  INFO -- : (0.000166s) SET client_min_messages = 'WARNING'
+I, [2018-12-18T17:19:22.799477 #49680]  INFO -- : (0.000138s) SET DateStyle = 'ISO'
+I, [2018-12-18T17:19:22.801389 #49680]  INFO -- : (0.000691s) SELECT CAST(current_setting('server_version_num') AS integer) AS v
+I, [2018-12-18T17:19:22.806103 #49680]  INFO -- : (0.004124s) SELECT "pg_attribute"."attname" AS "name", CAST("pg_attribute"."atttypid" AS integer) AS "oid", CAST("basetype"."oid" AS integer) AS "base_oid", format_type("basetype"."oid", "pg_type"."typtypmod") AS "db_base_type", format_type("pg_type"."oid", "pg_attribute"."atttypmod") AS "db_type", pg_get_expr("pg_attrdef"."adbin", "pg_class"."oid") AS "default", NOT "pg_attribute"."attnotnull" AS "allow_null", COALESCE(("pg_attribute"."attnum" = ANY("pg_index"."indkey")), false) AS "primary_key", "pg_attribute"."attidentity" FROM "pg_class" INNER JOIN "pg_attribute" ON ("pg_attribute"."attrelid" = "pg_class"."oid") INNER JOIN "pg_type" ON ("pg_type"."oid" = "pg_attribute"."atttypid") LEFT OUTER JOIN "pg_type" AS "basetype" ON ("basetype"."oid" = "pg_type"."typbasetype") LEFT OUTER JOIN "pg_attrdef" ON (("pg_attrdef"."adrelid" = "pg_class"."oid") AND ("pg_attrdef"."adnum" = "pg_attribute"."attnum")) LEFT OUTER JOIN "pg_index" ON (("pg_index"."indrelid" = "pg_class"."oid") AND ("pg_index"."indisprimary" IS TRUE)) WHERE (("pg_attribute"."attisdropped" IS FALSE) AND ("pg_attribute"."attnum" > 0) AND ("pg_class"."oid" = CAST(CAST('"posts"' AS regclass) AS oid))) ORDER BY "pg_attribute"."attnum"
+I, [2018-12-18T17:19:25.853006 #49680]  INFO -- : (0.000962s) SELECT * FROM "posts"
+I, [2018-12-18T17:19:40.118437 #49680]  INFO -- : (0.000255s) BEGIN
+I, [2018-12-18T17:19:40.119478 #49680]  INFO -- : (0.000692s) INSERT INTO "posts" ("title", "content", "gif", "date") VALUES ('Bonjour, le monde', 'Hola Moundo', '', '2018-12-18 17:19:40.117837+0100') RETURNING *
+I, [2018-12-18T17:19:40.160471 #49680]  INFO -- : (0.040779s) COMMIT
+I, [2018-12-18T17:19:40.164685 #49680]  INFO -- : (0.000278s) SELECT * FROM "posts"
