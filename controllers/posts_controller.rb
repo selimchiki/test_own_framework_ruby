@@ -4,7 +4,7 @@ class PostsController < BaseController
         info "Accueil de tout les posts vu"
         @posts = Post.all
         headers "Cache-Control" => 'private, max-age=30'
-        render "posts/index.html.erb"
+        render "posts/index.html.haml"
     end
 
     def show

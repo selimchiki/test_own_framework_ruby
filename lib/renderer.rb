@@ -33,7 +33,11 @@ class Renderer
   private
 
   def result
-    content = ERB.new(template).result(@binding)
+    if @filename.end_with?(".erb")
+      content = ERB.new(template).result(@binding)
+    else
+      content = Haml::Engine.new(template).render(@binding)
+    end
     insert_in_main_template { content }
   end
 
