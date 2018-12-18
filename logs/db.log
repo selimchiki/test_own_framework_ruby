@@ -95,3 +95,7 @@ I, [2018-12-18T19:39:54.468545 #58290]  INFO -- : (0.000404s) PRAGMA foreign_key
 I, [2018-12-18T19:39:54.468663 #58290]  INFO -- : (0.000023s) PRAGMA case_sensitive_like = 1
 I, [2018-12-18T19:39:54.481322 #58290]  INFO -- : (0.000118s) SELECT sqlite_version()
 I, [2018-12-18T19:39:54.481655 #58290]  INFO -- : (0.000171s) PRAGMA table_info('quotes')
+I, [2018-12-18T19:46:44.468837 #58632]  INFO -- : (0.000363s) PRAGMA foreign_keys = 1
+I, [2018-12-18T19:46:44.468965 #58632]  INFO -- : (0.000022s) PRAGMA case_sensitive_like = 1
+I, [2018-12-18T19:46:44.481495 #58632]  INFO -- : (0.000122s) SELECT sqlite_version()
+I, [2018-12-18T19:46:44.481865 #58632]  INFO -- : (0.000206s) PRAGMA table_info('quotes')

@@ -11,12 +11,12 @@ require_relative 'include_js'
 require_relative 'error'
 require_relative 'framework_logger'
 require_relative 'api_renderer'
+require_relative 'database'
 
-Dir.glob('controllers/*.rb') { |filename| require_relative("../#{filename}")} 
-
-DB = Sequel.connect(File.read("db/configuration").chomp, logger: Logger.new("logs/db.log"))
-Sequel::Model.plugin :json_serializer
+Dir.glob('controllers/*.rb') { |filename| require_relative("../#{filename}")}
 Dir.glob('models/*.rb') { |filename| require_relative("../#{filename}") }
+
+DB = Database.setup
 
 class Application
 
